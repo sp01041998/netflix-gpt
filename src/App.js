@@ -1,10 +1,14 @@
 import './App.css';
+import Body from './components/Body';
+import { Provider } from 'react-redux';
+import appStore from './util/appStore/appStore';
 
 function App() {
   return (
-    <div className="font-bold">
-     GHjkj ndskjrdnlkdfr
-    </div>
+    <Provider store ={appStore}>
+      <Body/>
+    </Provider>
+    
   );
 }
 
