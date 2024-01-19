@@ -9,12 +9,13 @@ import {
 import { regComponentMap } from "../../util/const";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../../util/firebase";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import { PHOTO_URL } from "../../util/const";
 
 const Login = () => {
   const [error, setError] = useState();
   const [regComponent, setRegComponent] = useState("signUp");
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const email = useRef(null);
   const password = useRef(null);
   const fullName = useRef(null);
@@ -51,9 +52,9 @@ const Login = () => {
       createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
           updateProfile(userCredential.user, {
-            displayName: fullName.current.value, photoURL: "https://lh3.googleusercontent.com/a/ACg8ocIyo4owYO5KoKBY45IbeymNEl3PMzGUJ1aXEMv90ulG6-Y=s96-c"
+            displayName: fullName.current.value, photoURL: PHOTO_URL
           }).then(() => {
-            navigate("/browse")
+            // navigate("/browse")
           }).catch((error) => {
             setError(error?.message)
           });
@@ -66,9 +67,9 @@ const Login = () => {
     } else {
       signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
-          const user = userCredential.user;
+          
 
-          navigate("/browse")
+          // navigate("/browse")
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -125,7 +126,7 @@ const Login = () => {
                 ? "Registered User?"
                 : "New to Netflix?"}
             </p>
-            <p className="ml-2 " onClick={changeRegComponent}>
+            <p className="ml-2 cursor-pointer" onClick={changeRegComponent}>
               {regComponent === "signUp" ? "Login In." : "Sign up now."}
             </p>
           </div>
