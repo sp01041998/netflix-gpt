@@ -5,11 +5,11 @@ import warning from "../../util/images/warning.png"
 
 const VideoInfo = ({title = "Shreyash", overview= "Hai to bkfd h sdh shbwe nbkj egigew ndibak djksb"}) => {
   return (
-    <div className='px-12 pt-80 absolute  w-screen bg-gradient-to-r from-black opacity-90 aspect-video text-white'>
-        <h1 className='text-3xl font-bold'>{title}</h1>
-        <p className="w-1/3 mt-4 mb-4 text-sm">{overview}</p>
+    <div className='px-12 pt-60 absolute  w-screen bg-gradient-to-r from-black opacity-90 aspect-video text-white'>
+        <h1 className='text-4xl font-bold'>{title}</h1>
+        <p className="w-1/3 mt-4 mb-4 text-base">{overview}</p>
         <div className='flex'>
-          <div className='flex items-center w-fit px-8 py-1 rounded-md text-base font-semibold cursor-pointer h-10 mr-4 bg-white'>
+          <div className='flex items-center w-fit px-8 py-1 rounded-md text-base font-semibold cursor-pointer h-10 mr-4 bg-white hover:bg-gray-300'>
             <img
               src={playButton}
               alt="Play button"
