@@ -5,6 +5,7 @@ import { RouterProvider } from 'react-router-dom'
 import SignUp from './pages/SignUp'
 
 import Browse from './pages/Browse'
+import WatchMovie from './pages/WatchMovie'
 
 const Body = () => {
     
@@ -20,7 +21,11 @@ const Body = () => {
         {
             path : "/browse",
             element : <Browse/>
-        }
+        },
+        {
+            path : 'movie/:movieId',
+            element : <WatchMovie/>
+        },
     ])
 
     

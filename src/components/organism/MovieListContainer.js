@@ -12,11 +12,10 @@ const MovieListContainer = () => {
     if(!topRatedMovies) return
     if(!upcomingMovies) return
   return (
-    <div className='bg-black'>
+    <div className='bg-black border border-black'>
         <div className='-mt-60 relative z-20'>
             <MovieListByCategory movies= {movies} category="Now Playing"/>
         </div>
-        
         <MovieListByCategory movies= {nowPlayingMovies} category="Popular"/>
         <MovieListByCategory movies= {topRatedMovies} category="Top Rated"/>
         <MovieListByCategory movies= {upcomingMovies} category="Upcoming"/>

@@ -17,17 +17,11 @@ const Browse = () => {
 
   return (
     <div className=''>
-        <Header customHeaderStyle = "bg-gradient-to-b from-black px-8 py-1 z-20" imageSize = "w-1/12"/>
-        {/* -- cretae mainContainer
-          - movies info
-          - button
-          - movie trailer play
-        -- create movies list by category * n
-          - movie card * n */}
+         <Header customHeaderStyle = "px-8 py-1 z-50 fixed" imageSize = "w-1/12"/>
           <MainContainer />
           <MovieListContainer/>
     </div>
   )
 }
 
-export default Browse
+export default Browse 

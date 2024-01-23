@@ -9,13 +9,11 @@ import {
 import { regComponentMap } from "../../util/const";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../../util/firebase";
-// import { useNavigate } from "react-router-dom";
 import { PHOTO_URL } from "../../util/const";
 
 const Login = () => {
   const [error, setError] = useState();
   const [regComponent, setRegComponent] = useState("signUp");
-  // const navigate = useNavigate()
   const email = useRef(null);
   const password = useRef(null);
   const fullName = useRef(null);
@@ -54,7 +52,6 @@ const Login = () => {
           updateProfile(userCredential.user, {
             displayName: fullName.current.value, photoURL: PHOTO_URL
           }).then(() => {
-            // navigate("/browse")
           }).catch((error) => {
             setError(error?.message)
           });
@@ -67,9 +64,6 @@ const Login = () => {
     } else {
       signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
-          
-
-          // navigate("/browse")
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -81,7 +75,7 @@ const Login = () => {
 
   return (
     <div>
-      <Header />
+      <Header customHeaderStyle = "absolute" />
       <section
         className="h-screen bg-cover bg-center flex flex-col justify-center items-center"
         style={{

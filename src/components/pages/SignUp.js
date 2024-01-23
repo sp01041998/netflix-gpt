@@ -4,7 +4,7 @@ import Header from "../section/Header";
 const SignUp = () => {
   return (
     <div>
-      <Header btnText="sign In" style="bg-red-600 w-20 h-8 rounded-lg text-white"/>
+      <Header btnText="sign In" style="bg-red-600 w-20 h-8 rounded-lg text-white" customHeaderStyle = "absolute" />
       <section
         className="h-screen bg-cover bg-center  flex flex-col justify-center items-center"
         style={{
@@ -13,7 +13,7 @@ const SignUp = () => {
         }}
       >
         <div>
-          <h1 className="font-bold text-5xl text-white font-extrabold">
+          <h1 className="font-bold text-5xl text-white">
             Unlimited movies, TV shows and more
           </h1>
           <h3 className="text-white text-center text-2xl mt-4">
