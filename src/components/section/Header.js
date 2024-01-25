@@ -16,20 +16,31 @@ const Header = ({ btnText, style, customHeaderStyle, imageSize }) => {
   const navigate = useNavigate();
   const { pathname } = location;
 
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // console.log(user)
-        const { uid, email, displayName, photoURL } = user;
-        dispatch(addUser({ uid, email, displayName, photoURL }));
-        navigate("/browse");
-      } else {
-        dispatch(removeUser());
-        navigate("/login");
-      }
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   onAuthStateChanged(auth, (user) => {
+  //     if (user) {
+  //       console.log(user)
+  //       console.log({pathname})
+  //       const { uid, email, displayName, photoURL } = user;
+  //       dispatch(addUser({ uid, email, displayName, photoURL }));
+  //       if(pathname === "/login"){
+  //         navigate("/browse")
+  //         return
+  //       }
+  //       navigate(pathname);
+  //     } else {
+  //       console.log({pathname})
+  //       dispatch(removeUser());
+  //       console.log({pathname})
+  //       if(pathname=== "/login"){
+  //         navigate('/login')
+  //         return
+  //       }
+  //       navigate("/");
+  //     }
+  //   });
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   const handleMouseEnter = () => {
     if (isHovered) return;
@@ -40,29 +51,38 @@ const Header = ({ btnText, style, customHeaderStyle, imageSize }) => {
     setIsHovered(false);
   };
   return (
-    //absolute
-    <div className={`px-32 py-2 flex items-center justify-between w-full absolute ${customHeaderStyle}`}
+    <div
+      className={`px-32 py-2 flex items-center justify-between w-full ${customHeaderStyle}`}
     >
-      <img
-        className={`w-44 ${imageSize}`}
-        src={NETFLIX_LOGO_HEADER}
-        alt="Netflix"
-      />
-      <button className={style}>
-        <Link to="/login">{btnText}</Link>
-      </button>
-      {!pathForProfile.includes(pathname) && (
-        <div
-          className="flex items-center"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img src={PROFILE_BAR} alt="Profile" className="w-12" />
-          {<p className="ml-1 text-white">{isHovered ? "▲" : "▼"}</p>}
-          {isHovered && <ProfileModal />}
-          {/* {true && <ProfileModal/>} */}
-        </div>
-      )}
+      <div className="flex w-8/12">
+        <img
+          className={`w-44 ${imageSize}`}
+          src={NETFLIX_LOGO_HEADER}
+          alt="Netflix"
+        />
+        {!['/login', '/'].includes(pathname) && <div className="text-white flex items-center w-6/12 justify-around">
+          <p><Link>Home</Link></p>
+          <p><Link to='/list'>My List</Link></p>
+          <p>Liked Movies</p>
+          <p>Search GPT</p>
+        </div>}
+      </div>
+      <div className="flex">
+        <button className={style}>
+          <Link to="/login">{btnText}</Link>
+        </button>
+        {!pathForProfile.includes(pathname) && (
+          <div
+            className="flex items-center"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <img src={PROFILE_BAR} alt="Profile" className="w-12" />
+            {<p className="ml-1 text-white">{isHovered ? "▲" : "▼"}</p>}
+            {isHovered && <ProfileModal />}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

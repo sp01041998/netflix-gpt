@@ -6,6 +6,7 @@ import SignUp from './pages/SignUp'
 
 import Browse from './pages/Browse'
 import WatchMovie from './pages/WatchMovie'
+import List from './pages/List'
 
 const Body = () => {
     
@@ -25,6 +26,10 @@ const Body = () => {
         {
             path : 'movie/:movieId',
             element : <WatchMovie/>
+        },
+        {
+            path : 'list',
+            element : <List/>
         },
     ])
 
