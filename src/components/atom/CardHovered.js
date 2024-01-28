@@ -59,8 +59,8 @@ const CardHovered = ({ poster, movieId }) => {
 
   if (!isDataLoaded) {
     return (
-      <div className="h-80 w-72 bg-nuetral-800 rounded-md pb-6 border border-red-500 overflow-hidden">
-        <div className="h-40 w-72 bg-gray-300"></div>
+      <div className="h-80 w-72 bg-nuetral-800 rounded-md pb-6 overflow-hidden">
+        <div className="w-72 bg-gray-300 h-72 rounded-md"></div>
       </div>
     );
   }
@@ -104,7 +104,7 @@ const CardHovered = ({ poster, movieId }) => {
             </p>
             <p className="border border-white px-2">IMDb {rating}</p>
           </div>
-          <div className="text-white flex  mt-2 px-4 flex- gap-x-4 flex-wrap">
+          <div className="text-white flex  mt-2 px-4 flex- gap-x-4 flex-wrap w-72">
             {genres?.map((genre) => (
               <div className="flex items-center w-fit">
                 <span className="font-bold text-slate-600 text-xl mr-1">•</span>

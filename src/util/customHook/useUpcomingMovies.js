@@ -14,7 +14,6 @@ const useUpcomingMovies = () => {
       'Authorization': `Bearer ${BEARER_ACCESS_TOKEN}`,
     };
     const moviesData = await axios.get("https://api.themoviedb.org/3/movie/upcoming?&page=1", {headers})
-    console.log(moviesData?.data?.results)
     dispatch(addUpcomingMovies(moviesData?.data?.results))
   }
 

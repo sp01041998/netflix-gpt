@@ -19,7 +19,7 @@ const FetchMovieVideos = (movieId) => {
       `https://api.themoviedb.org/3/movie/${movieId}/videos`,
       { headers }
     );
-    console.log(data?.data?.results);
+    // console.log(data?.data?.results);
     let trailer = [];
     data?.data?.results?.filter((video) => {
       if (video?.type === "Trailer" && video?.name === "Official Trailer") {
@@ -35,7 +35,7 @@ const FetchMovieVideos = (movieId) => {
         }
       });
     }
-    console.log(trailer[0]?.key, "keeey");
+    // console.log(trailer[0]?.key, "keeey");
     setBackgroundTrailerId(trailer[0]?.key);
   };
   return backgroundTrailerId

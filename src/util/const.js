@@ -91,3 +91,18 @@ export const GENRE_LIST = [
         "name": "Western"
       }
     ]
+
+export const NAVBAR = {
+  "Home" : "/browse",
+  "My List" : "/list",
+  "Liked Movies" : "/liked",
+  // "Search GPT" : "/gpt"
+}
+export const PATH_MAPPING = {
+   "/browse" : 0,
+  "/list" : 1,
+  "/liked" : 2,
+  // "/gpt" : 3
+}
+
+export const GPT_API_KEY =  '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'

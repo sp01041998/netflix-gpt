@@ -5,9 +5,9 @@ import axios from 'axios'
 import Header from '../section/Header'
 import MovieCard from '../atom/MovieCard'
 
-const List = () => {
+const Liked = () => {
     const [movieData, setMovieData] = useState(null)
-    const myList = useSelector(store => store.user.personalMovieList)
+    const myList = useSelector(store => store.user.likedMovies)
     useEffect(() => {
         fetchMoviesData()
     }, [])
@@ -35,7 +35,7 @@ const List = () => {
   return (
     <div className='bg-black pb-8 min-h-screen'>
         <Header  customHeaderStyle = "px-8 py-1 z-50 bg-zinc-800 sticky top-0"/>
-        <div className='flex flex-wrap px-10 gap-6 pt-16'>
+        <div className='flex flex-wrap px-10 gap-4 pt-16'>
         {movieData.map((movie) => (
             <MovieCard
                 key = {movie.data.id}
@@ -48,4 +48,4 @@ const List = () => {
   )
 }
 
-export default List
+export default Liked

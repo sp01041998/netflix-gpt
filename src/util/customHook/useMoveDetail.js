@@ -5,7 +5,7 @@ import { addMovieDetail} from '../../util/appStore/moviesSlice'
 import { useEffect } from "react";
 
 
-const useMovieDetail = (movieId, isHovered) => {
+const useMovieDetail = (movieId) => {
     const dispatch = useDispatch()
   const getMovieDetail = async () => {
     const headers = {
