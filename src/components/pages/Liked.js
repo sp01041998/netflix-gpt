@@ -10,6 +10,7 @@ const Liked = () => {
     const myList = useSelector(store => store.user.likedMovies)
     useEffect(() => {
         fetchMoviesData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     function fetchMoviesData(){
         const movieData = myList?.map((movieId) => {

@@ -1,6 +1,4 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { BEARER_ACCESS_TOKEN } from "../../util/const";
+import React from "react";
 import FetchMovieVideos from "../../util/customHook/useFetchMovieVideos";
 
 const VideoBackground = ({ movieId }) => {

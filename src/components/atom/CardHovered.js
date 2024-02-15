@@ -18,7 +18,6 @@ const CardHovered = ({ poster, movieId }) => {
     genres,
     runtime = 0,
     vote_average = 0,
-    id,
     backdrop_path,
   } = movies || {};
   let hours = Math.floor(runtime / 60);

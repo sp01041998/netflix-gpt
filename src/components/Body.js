@@ -8,7 +8,7 @@ import Browse from './pages/Browse'
 import WatchMovie from './pages/WatchMovie'
 import List from './pages/List'
 import Liked from './pages/Liked'
-import GptSearch from './pages/GptSearch'
+
 
 const Body = () => {
     
@@ -36,11 +36,7 @@ const Body = () => {
         {
             path : '/liked',
             element : <Liked/>
-        },
-        {
-            path : '/gpt',
-            element : <GptSearch/>
-        },
+        }
     ])
 
     
